@@ -4,7 +4,7 @@ import leftimage from "../assets/leftimage.png";
 import eye from "../assets/eye.png";
 import lock from "../assets/lock.png";
 
-function SignUp() {
+function LogIn() {
     return (
         <div className="flex w-full h-screen bg-[#EC7C64] p-8 lg:p-16">
             <div className="flex w-full h-full bg-white p-2 lg:p-4 rounded-lg">
@@ -20,8 +20,10 @@ function SignUp() {
                 <div className="w-full flex items-center justify-center lg:w-1/2">
                     <div className="font-mono">
                         <h1 className="flex items-center text-5xl font-bold">
-                            <span className="text-[#EC7C64] ml- 6">New</span>
-                            <span className="text-black ml-6"> Here?</span>
+                            <span className="text-[#EC7C64] ml- 6">
+                                Welcome
+                            </span>
+                            <span className="text-black ml-6"> Back</span>
                             <img
                                 src={wavinghand}
                                 alt="Waving Hand emoji"
@@ -59,13 +61,6 @@ function SignUp() {
                                     }}
                                 ></input>
                             </div>
-                            <div>
-                                <input
-                                    className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
-                                    placeholder="Confirm Password"
-                                    type="password"
-                                ></input>
-                            </div>
                             <div className="mt-6 flex justify-between items-center">
                                 <div>
                                     <input
@@ -85,18 +80,18 @@ function SignUp() {
                             </div>
                             <div className="mt-6 flex">
                                 <button className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out w-full py-3 bg-[#EC7C64] text-white text-lg font-bold rounded-xl">
-                                    Sign Up
+                                    Log In
                                 </button>
                             </div>
                             <div className="mt-6 flex justify-between items-center">
                                 <p className="font-medium text-base">
-                                    Already have an account?
+                                    Don't have an account?
                                 </p>
                                 <button
                                     className="text-base font-black"
                                     for="remember"
                                 >
-                                    Log in
+                                    Sign Up
                                 </button>
                             </div>
                         </div>
@@ -107,4 +102,4 @@ function SignUp() {
     );
 }
 
-export default SignUp;
+export default LogIn;
