@@ -6,6 +6,7 @@ import starunfilled from "../assets/unfilled-star.png";
 
 function StoriesHome() {
     const [rating, setRating] = useState(0);
+    
   
     const handleClick = (index) => {
       setRating(index + 1);
