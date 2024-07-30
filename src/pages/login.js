@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import wavinghand from "../assets/wavinghand.png";
-import leftimage from "../assets/leftimage.png";
+import wavinghand from "../assets/wavinghand.svg";
+import leftimage from "../assets/authimage.svg";
 import eye from "../assets/eye.png";
 import lock from "../assets/lock.png";
 import axios from "axios";
+import { url } from "../config";
 
 const LogIn = () => {
-	const [userid, setuserid] = useState("");
+	const [email, setemail] = useState("");
 	const [password, setPassword] = useState("");
 	const [userData, setUserData] = useState({});
 
@@ -88,7 +89,7 @@ const LogIn = () => {
 										name="email"
 										value={email}
 										onChange={(e) => {
-											setuserid(e.target.value);
+											setemail(e.target.value);
 										}}
 										className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
 										placeholder="Email"

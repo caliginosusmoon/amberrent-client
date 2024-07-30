@@ -10,9 +10,11 @@ function App() {
 	return (
 		<div className="w-full max-width-[1300px]">
 			<BrowserRouter>
-				<Route path="/" element={<Home />} />
-				<Route path="/login" element={<LogIn />} />
-				<Route path="/signup" element={<sig />} />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/login" element={<LogIn />} />
+					<Route path="/signup" element={<sig />} />
+				</Routes>
 			</BrowserRouter>
 		</div>
 	);
