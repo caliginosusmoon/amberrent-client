@@ -4,16 +4,22 @@ import Home from "./pages/home";
 import SignUp from "./pages/signup";
 import AboutPage from "./pages/about";
 import Stories from "./pages/stories";
+// import Footer from "./components/footer"
+import AboutHome from "./components/about-home";
 
 function App() {
     return (
         <div className="w-full max-width-[1300px]">
-            {/* <Home/> */}
+            <Home/>
             {/* <SignUp /> */}
             {/* <AboutPage/> */}
-            <Stories/>
+            {/* <Stories/>
+            <AboutHome/>
+            <Footer/> */}
+            
         </div>
     );
 }
 
 export default App;
+ 
