@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { IoIosContact } from "react-icons/io";
 import person from "../assets/person.png";
@@ -7,8 +7,27 @@ import { IoBed } from "react-icons/io5";
 import { FaBath } from "react-icons/fa6";
 import { MdBalcony } from "react-icons/md";
 import { BsPersonSquare } from "react-icons/bs";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { url } from "../config";
 
-const productDetails = () => {
+const ProductDetail = () => {
+	const { id } = useParams();
+	const [productDetails, setProductDetails] = useState();
+
+	useEffect(() => {
+		const fetchProducts = async () => {
+			try {
+				const product = await axios.get(`${url}product/products/${id}`);
+				setProductDetails(product);
+			} catch (error) {
+				console.error("Error fetching products:", error);
+			}
+		};
+
+		fetchProducts();
+	}, []);
+
 	return (
 		<div>
 			<div>
@@ -213,4 +232,4 @@ const productDetails = () => {
 	);
 };
 
-export default productDetails;
+export default ProductDetail;

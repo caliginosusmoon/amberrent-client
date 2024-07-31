@@ -5,10 +5,11 @@ import logo from "./logo.svg";
 import Home from "./pages/home";
 import SignUp from "./pages/signup";
 import LogIn from "./pages/login";
-import ProductDetails from "./pages/productDetails";
+
 import { CgProductHunt } from "react-icons/cg";
 import ProductsPage from "./pages/products";
 import ListWithUs from "./components/list-with-us";
+import ProductDetail from "./pages/ProductDetail";
 
 function App() {
 	return (
@@ -18,10 +19,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/login" element={<LogIn />} />
 					<Route path="/signup" element={<SignUp />} />
-					<Route
-						path="/productDetails"
-						element={<ProductDetails />}
-					/>
+					<Route path="/product/:id" element={<ProductDetail />} />
 					<Route path="/productsPage" element={<ProductsPage />} />
 				</Routes>
 			</BrowserRouter>

@@ -14,6 +14,7 @@ import { HiOutlineHeart } from "react-icons/hi";
 import { FaCircleChevronDown, FaCircleChevronRight } from "react-icons/fa6";
 import axios from "axios";
 import { url } from "../config";
+import { useNavigate } from "react-router-dom";
 
 const ProductsPage = () => {
 	const [products, setProducts] = useState([]);
@@ -65,6 +66,9 @@ const ProductsPage = () => {
 const ProductCarddetail = ({ product }) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [filled, setFilled] = useState(false);
+
+	const navigate = useNavigate();
+
 	const handleToggle = () => {
 		setIsExpanded(!isExpanded);
 	};
@@ -159,7 +163,10 @@ const ProductCarddetail = ({ product }) => {
 					<button className="border-[#3E001F] text-[#3E001F] font-bold py-2 px-10 border rounded-full">
 						Contact Owner
 					</button>
-					<button className="bg-[#3E001F] text-white font-bold py-2 px-14 border rounded-full">
+					<button
+						className="bg-[#3E001F] text-white font-bold py-2 px-14 border rounded-full"
+						onClick={() => navigate(`/product/${product?._id}`)}
+					>
 						Know More
 					</button>
 				</div>
