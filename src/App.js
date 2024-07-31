@@ -5,6 +5,7 @@ import logo from "./logo.svg";
 import Home from "./pages/home";
 import SignUp from "./pages/signup";
 import LogIn from "./pages/login";
+import ProductDetails from "./pages/productDetails";
 
 function App() {
 	return (
@@ -14,6 +15,10 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/login" element={<LogIn />} />
 					<Route path="/signup" element={<SignUp />} />
+					<Route
+						path="/productDetails"
+						element={<ProductDetails />}
+					/>
 				</Routes>
 			</BrowserRouter>
 		</div>

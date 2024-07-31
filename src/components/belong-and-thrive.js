@@ -38,8 +38,7 @@ const BelongAndThrive = () => {
 					<p className="text-base font-light pb-6">
 						Your place of pride with us
 					</p>
-					<div className="grid grid-cols-4 items-center gap-2"></div>
-					<div>
+					<div className="grid grid-cols-4 items-center gap-2">
 						{products.length > 0 &&
 							products
 								.slice(0, 7)
