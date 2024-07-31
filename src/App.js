@@ -6,6 +6,9 @@ import Home from "./pages/home";
 import SignUp from "./pages/signup";
 import LogIn from "./pages/login";
 import ProductDetails from "./pages/productDetails";
+import { CgProductHunt } from "react-icons/cg";
+import ProductsPage from "./pages/products";
+import ListWithUs from "./components/list-with-us";
 
 function App() {
 	return (
@@ -19,6 +22,7 @@ function App() {
 						path="/productDetails"
 						element={<ProductDetails />}
 					/>
+					<Route path="/productsPage" element={<ProductsPage />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
