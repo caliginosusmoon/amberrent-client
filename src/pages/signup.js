@@ -35,10 +35,10 @@ const SignUp = () => {
 	};
 
 	return (
-		<div className="flex w-full h-screen bg-[#EC7C64] p-8 lg:p-16">
-			<div className="flex w-full h-full bg-white p-2 lg:p-4 rounded-lg">
+		<div className="flex w-full max-w-[1300px] h-screen bg-[#EC7C64] p-8 lg:p-8 margin: 0 auto">
+			<div className="grid grid-cols-2 gap-12 w-full h-full bg-white p-2 lg:p-4 rounded-lg margin: 0 auto ">
 				{/* Image section, hidden on small screens */}
-				<div className="hidden lg:flex h-full w-1/2 items-center justify-center bg-gray-200 rounded-lg overflow-hidden">
+				<div className="hidden lg:flex h=[20vh] items-center justify-center bg-gray-200 rounded-lg overflow-hidden">
 					<img
 						src={leftimage}
 						alt="Left Image"
@@ -46,20 +46,23 @@ const SignUp = () => {
 					/>
 				</div>
 				{/* Form section */}
-				<form onSubmit={handleSubmit}>
-					<div className="w-full flex items-center justify-center lg:w-1/2">
+				<form
+					onSubmit={handleSubmit}
+					className="flex items-center w-full"
+				>
+					<div className="flex flex-1 items-center justify-center lg:w-1/2">
 						<div className="font-mono">
-							<h1 className="flex items-center text-5xl font-bold">
-								<span className="text-[#EC7C64] ml- 6">
+							<div className="flex items-center text-3xl font-bold gap-3">
+								<span className="text-[#EC7C64] ml-6 ">
 									New
 								</span>
 								<span className="text-black ml-6"> Here?</span>
 								<img
 									src={wavinghand}
 									alt="Waving Hand emoji"
-									className="w-10 h-10 ml-6"
+									sizes="30"
 								/>
-							</h1>
+							</div>
 							<p className="font-medium mt-6">
 								Please enter your details
 							</p>

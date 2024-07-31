@@ -54,10 +54,10 @@ const LogIn = () => {
 	};
 
 	return (
-		<div className="flex w-full h-screen bg-[#EC7C64] p-8 lg:p-16">
-			<div className="flex w-full h-full bg-white p-2 lg:p-4 rounded-lg">
+		<div className="flex w-full max-w-[1300px] h-screen bg-[#EC7C64] p-8 lg:p-8 margin: 0 auto">
+			<div className="grid grid-cols-2 gap-40 w-full h-full bg-white p-2 lg:p-4 rounded-lg margin: 0 auto ">
 				{/* Image section, hidden on small screens */}
-				<div className="hidden lg:flex h-full w-1/2 items-center justify-center bg-gray-200 rounded-lg overflow-hidden">
+				<div className="hidden lg:flex h=[20vh] w=[200vw] items-center justify-center bg-gray-200 rounded-lg overflow-hidden">
 					<img
 						src={leftimage}
 						alt="Left Image"
