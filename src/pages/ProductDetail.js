@@ -20,7 +20,9 @@ const ProductDetail = () => {
 				const response = await axios.get(
 					`${url}product/products/${id}`
 				);
-				setProductDetails(response.data); // Ensure to set the correct data
+				setProductDetails(response.data);
+				console.log("product detail", response.data);
+				// Ensure to set the correct data
 			} catch (error) {
 				console.error("Error fetching product details:", error);
 			}
@@ -68,7 +70,7 @@ const ProductDetail = () => {
 								<div className="pt-1 pl-2 pr-2">
 									<MdBalcony />
 								</div>
-								<div>{productDetails.balconies} balcony</div>
+								<div>{productDetails.balcony} balcony</div>
 							</div>
 						</div>
 						<div className="border-0 bg-[#FFE5AD54] rounded-lg m-8 p-2">
@@ -84,13 +86,17 @@ const ProductDetail = () => {
 											Super Built Area
 										</div>
 										<div className="font-semibold">
-											{productDetails.area} sqft
+											{
+												productDetails?.details
+													?.superBuiltArea
+											}{" "}
+											sqft
 										</div>
 									</div>
 									<div className="p-2">
 										<div className="font-thin">Parking</div>
 										<div className="font-semibold">
-											{productDetails.parking}
+											{productDetails?.details?.parking}
 										</div>
 									</div>
 								</div>
@@ -100,7 +106,10 @@ const ProductDetail = () => {
 											Additional Rooms
 										</div>
 										<div className="font-semibold">
-											{productDetails.additionalRooms}
+											{
+												productDetails?.details
+													?.additionalRooms
+											}
 										</div>
 									</div>
 									<div className="p-2">
@@ -108,7 +117,7 @@ const ProductDetail = () => {
 											Furnished
 										</div>
 										<div className="font-semibold">
-											{productDetails.furnished}
+											{productDetails?.details?.furnished}
 										</div>
 									</div>
 								</div>
@@ -116,7 +125,7 @@ const ProductDetail = () => {
 									<div className="p-2">
 										<div className="font-thin">Floor </div>
 										<div className="font-semibold">
-											{productDetails.floor}
+											{productDetails?.details?.floor}
 										</div>
 									</div>
 									<div className="p-2">
@@ -124,7 +133,11 @@ const ProductDetail = () => {
 											Maintenance{" "}
 										</div>
 										<div className="font-semibold">
-											{productDetails.maintenance}/month
+											{
+												productDetails?.details
+													?.maintenance
+											}
+											/month
 										</div>
 									</div>
 								</div>
@@ -146,39 +159,45 @@ const ProductDetail = () => {
 										Age of Construction
 									</div>
 									<div className="font-semibold">
-										{productDetails.ageOfConstruction}
+										{
+											productDetails?.features
+												?.ageOfConstruction
+										}
 									</div>
 								</div>
 								<div className="font-semibold pt-2 pr-6 pl-4 pb-2">
-									Visitor Parking
+									{productDetails?.features?.visitorParking &&
+										"Visitor Parking"}
 								</div>
-								<div className="font-semibold pt-2 pr-6 pl-4 pb-2">
-									Water Storage
-								</div>
+								{productDetails?.features?.waterStorage && (
+									<div className="font-semibold pt-2 pr-6 pl-4 pb-2">
+										"Water Storage"
+									</div>
+								)}
 							</div>
 							<div>
 								<div className="pt-2 pr-6 pl-4 pb-2">
 									<div className="font-thin">Facing</div>
 									<div className="font-semibold">
-										{productDetails.facing}
+										{productDetails?.features?.facing}
 									</div>
 								</div>
 								<div className="font-semibold pt-2 pr-6 pl-4 pb-2">
-									Park
+									<br />
+									{productDetails?.features?.park && "Park"}
 								</div>
 								<div className="font-semibold pt-2 pr-6 pl-4 pb-2">
-									Friendly Neighbourhood
+									{productDetails?.features
+										?.friendlyNeighborhood &&
+										"Friendly Neighbourhood"}
 								</div>
 							</div>
 							<div>
 								<div className="pt-2 pr-6 pl-4 pb-2">
 									<div className="font-thin">Status</div>
 									<div className="font-semibold">
-										{productDetails.status}
+										{productDetails?.features?.status}
 									</div>
-								</div>
-								<div className="font-semibold pt-2 pr-6 pl-4 pb-2">
-									Security
 								</div>
 							</div>
 						</div>
@@ -201,7 +220,7 @@ const ProductDetail = () => {
 						<div className="pt-1 pl-2 pr-2">
 							<IoIosContact />{" "}
 						</div>
-						<div>{productDetails.contactName}</div>
+						<div>{productDetails?.owner?.name}</div>
 					</div>
 					<div>
 						<button class="bg-[#982176] p-1 rounded-lg hover:bg-[#F11A7B] text-white ...">

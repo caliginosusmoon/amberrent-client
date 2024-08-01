@@ -42,14 +42,18 @@ const BelongAndThrive = () => {
 					<div className="grid grid-cols-4 items-center gap-2">
 						{products.length > 0 &&
 							products
-								.slice(0, 7)
-								.map((product, index) => (
-									<ProductCard
-										key={index}
-										product={product}
-										navigate={navigate}
-									/>
-								))}
+
+								.map(
+									(product, index) =>
+										index > products.length - 5 && (
+											<ProductCard
+												key={index}
+												product={product}
+												navigate={navigate}
+											/>
+										)
+								)
+								.reverse()}
 					</div>
 				</div>
 			</div>
@@ -61,11 +65,13 @@ const ProductCard = ({ product, navigate }) => {
 	return (
 		<div>
 			<div
-				// onClick={() => navigate(`/product/${product?._id}`)}
+				onClick={() => navigate(`/product/${product?._id}`)}
 				key={product.title}
 				className="bg-white shadow-2xl flex flex-col rounded-2xl"
 			>
-				<img src={product.image} width={400} height={500} />
+				<div className="bg-black">
+					<img src={product.image} width={400} height={500} />
+				</div>
 
 				<div className="p-4">
 					<div className="pt-2 pb-10">

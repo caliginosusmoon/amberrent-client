@@ -13,6 +13,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Navbar from "./components/Navbar";
 import AddListing from "./pages/AddListing";
 import MyListing from "./pages/MyListing";
+import Stories from "./pages/stories";
 
 const App = () => {
 	return (
@@ -28,6 +29,7 @@ const App = () => {
 					<Route path="/register/user/:id" element={<ListWithUs />} />
 					<Route path="/addproduct" element={<AddListing />} />
 					<Route path="/my-listings/:id" element={<MyListing />} />
+					<Route path="/stories" element={<Stories />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
