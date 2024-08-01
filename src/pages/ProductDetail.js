@@ -38,16 +38,6 @@ const ProductDetail = () => {
 	return (
 		<div>
 			<div>
-				<div className="bg-[#3E001F] flex flex-row text-[#F6FFCE] items-center sticky top-0 justify-between p-4 mx-8">
-					<h2 className="text-2xl font-bold font-sans">LOGO</h2>
-					<ul className="flex flex-row items-center right-0 justify-items-end justify-end gap-16">
-						<li>List with us</li>
-						<li>Stories</li>
-						<li>My lists</li>
-						<li>My shortlists</li>
-						<BsPersonSquare />
-					</ul>
-				</div>
 				<div className="grid m-8">
 					<div>
 						<h1 className="text-[#F11A7B] font-bold text-lg">

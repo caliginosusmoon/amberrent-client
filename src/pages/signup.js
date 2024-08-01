@@ -27,7 +27,7 @@ const SignUp = () => {
 				password,
 			});
 			console.log("Registration successful");
-			window.location.href = "/";
+			window.location.href = "/login";
 		} catch (err) {
 			console.error("Registration failed:", err);
 			alert("Registration failed. Please try again.");

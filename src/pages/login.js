@@ -41,6 +41,8 @@ const LogIn = () => {
 					JSON.stringify({
 						name: res?.data?.user.firstName,
 						email: res?.data?.user.email,
+						userId: res?.data?.user._id,
+						role: res?.data?.user.role,
 					})
 				);
 				navigate("/", { state: { userData: res?.data?.user } });

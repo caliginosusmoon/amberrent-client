@@ -10,21 +10,28 @@ import { CgProductHunt } from "react-icons/cg";
 import ProductsPage from "./pages/products";
 import ListWithUs from "./components/list-with-us";
 import ProductDetail from "./pages/ProductDetail";
+import Navbar from "./components/Navbar";
+import AddListing from "./pages/AddListing";
+import MyListing from "./pages/MyListing";
 
-function App() {
+const App = () => {
 	return (
 		<div className="w-full max-width-[1300px]">
 			<BrowserRouter>
+				<Navbar />
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/login" element={<LogIn />} />
 					<Route path="/signup" element={<SignUp />} />
 					<Route path="/product/:id" element={<ProductDetail />} />
 					<Route path="/productsPage" element={<ProductsPage />} />
+					<Route path="/register/user/:id" element={<ListWithUs />} />
+					<Route path="/addproduct" element={<AddListing />} />
+					<Route path="/my-listings/:id" element={<MyListing />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
 	);
-}
+};
 
 export default App;
