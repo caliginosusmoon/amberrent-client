@@ -31,24 +31,30 @@ const Navbar = () => {
 	return (
 		<div className="bg-[#3E001F] flex flex-row text-[#F6FFCE] items-center sticky top-0 justify-between p-4 mx-8">
 			<h2
-				className="text-2xl font-bold font-sans"
+				className="text-2xl font-bold font-sans cursor-pointer"
 				onClick={() => {
 					navigate("/");
 				}}
 			>
 				LOGO
 			</h2>
-			<ul className="flex flex-row items-center right-0 justify-items-end justify-end gap-16">
-				<li onClick={handleChange}>List with us</li>
+			<ul className="nav-items flex flex-row items-center right-0 justify-items-end justify-end gap-16">
+				<li className="cursor-pointer" onClick={handleChange}>
+					List with us
+				</li>
 				<li
+					className="cursor-pointer"
 					onClick={() => {
 						navigate("/stories");
 					}}
 				>
 					Stories
 				</li>
-				<li onClick={handleMyList}>My lists</li>
+				<li className="cursor-pointer" onClick={handleMyList}>
+					My lists
+				</li>
 				<li
+					className="cursor-pointer"
 					onClick={() => {
 						navigate("/productsPage");
 					}}

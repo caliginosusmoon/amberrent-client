@@ -52,7 +52,7 @@ const ProductsPage = () => {
 	);
 };
 
-const ProductCarddetail = ({ product }) => {
+export const ProductCarddetail = ({ product }) => {
 	const [isExpanded, setIsExpanded] = useState(false);
 	const [filled, setFilled] = useState(false);
 
@@ -163,4 +163,5 @@ const ProductCarddetail = ({ product }) => {
 		</div>
 	);
 };
-export default ProductsPage;
+const pages = { ProductsPage, ProductCarddetail };
+export default pages;

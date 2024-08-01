@@ -183,7 +183,6 @@ const ProductDetail = () => {
 									</div>
 								</div>
 								<div className="font-semibold pt-2 pr-6 pl-4 pb-2">
-									<br />
 									{productDetails?.features?.park && "Park"}
 								</div>
 								<div className="font-semibold pt-2 pr-6 pl-4 pb-2">
