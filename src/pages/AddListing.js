@@ -108,7 +108,7 @@ const AddListing = () => {
 			);
 			console.log(response?.data);
 			alert(response?.data?.message);
-			navigate(`/my-listing/${userId}`);
+			navigate(`/my-listings/${userId}`);
 
 			// Handle success, show a message or redirect
 		} catch (error) {
@@ -530,7 +530,7 @@ const AddListing = () => {
 					<div className="flex justify-between">
 						<button
 							type="button"
-							onClick={navigate("/")}
+							onClick={() => navigate("/")}
 							className="bg-[#982176] text-[#FFE5AD] p-2 rounded cursor-pointer text-lg hover:bg-[#f597db]"
 						>
 							Back

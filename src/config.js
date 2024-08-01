@@ -1,1 +1,1 @@
-export const url = "http://localhost:5000/";
+export const url = "hhttps://amberrent-server.vercel.app/";

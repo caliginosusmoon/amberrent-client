@@ -69,7 +69,7 @@ const ProductCard = ({ product, navigate }) => {
 				key={product.title}
 				className="bg-white shadow-2xl flex flex-col rounded-2xl"
 			>
-				<div className="bg-black">
+				<div>
 					<img src={product.image} width={400} height={500} />
 				</div>
 
