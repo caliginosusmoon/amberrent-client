@@ -23,6 +23,7 @@ const BelongAndThrive = () => {
 
 		fetchProducts();
 	}, []);
+	
 	return (
 		<div>
 			<div className="w-full mob:px-0">
@@ -61,7 +62,15 @@ const BelongAndThrive = () => {
 	);
 };
 
+
 const ProductCard = ({ product, navigate }) => {
+	function shortdescription(){
+		const words=product.description.split(" ");
+		if(words.length>20){
+			return words.slice(0,20).join(" ")+"...";
+		}
+		return product.description;
+	}
 	return (
 		<div className="w-[100%] h-[100%]">
 			<div
@@ -69,20 +78,20 @@ const ProductCard = ({ product, navigate }) => {
 				key={product.title}
 				className="bg-white shadow-2xl flex flex-col rounded-2xl mob:w-full mob:px-0"
 			>
-				<div>
-					<img src={product.image} width={400} height={500} />
-				</div>
+				
+					<img src={product.image} width={400} height={500} className="border rounded-tl-xl rounded-tr-xl"/>
+				
 
 				<div className="p-4">
 					<div className="pt-2 pb-10">
 						<h2 className="flex flex-row items-center justify-between text-lg font-semibold">
 							{product.title} <BiHeart />
 						</h2>
-						<p className="text-gray-600 overflow-hidden">{product.description}</p>
+						<p className="text-gray-600 overflow-hidden py-4">{shortdescription()}</p>
 					</div>
 
 					<div className="grid grid-cols-5 gap-2 justify-center mob:flex mob:flex-col">
-						<div className="flex flex-col items-center justify-center mob:flex mob:flex-row">
+						<div className="flex flex-col items-center mob:flex mob:flex-row">
 							<img src={cilcash} width={40} height={40} />
 							<h2 className="text-md font-bold whitespace-nowrap">
 								{product.price}
