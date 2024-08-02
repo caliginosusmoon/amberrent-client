@@ -7,13 +7,15 @@ import SignUp from "./pages/signup";
 import LogIn from "./pages/login";
 
 import { CgProductHunt } from "react-icons/cg";
-import ProductsPage from "./pages/products";
+
 import ListWithUs from "./components/list-with-us";
 import ProductDetail from "./pages/ProductDetail";
 import Navbar from "./components/Navbar";
 import AddListing from "./pages/AddListing";
 import MyListing from "./pages/MyListing";
 import Stories from "./pages/stories";
+import ProductsPage from "./pages/products";
+import ProductsByFilter from "./pages/ProductsByFilter";
 
 const App = () => {
 	return (
@@ -30,6 +32,10 @@ const App = () => {
 					<Route path="/addproduct" element={<AddListing />} />
 					<Route path="/my-listings/:id" element={<MyListing />} />
 					<Route path="/stories" element={<Stories />} />
+					<Route
+						path="/filteredProducts"
+						element={<ProductsByFilter />}
+					/>
 				</Routes>
 			</BrowserRouter>
 		</div>

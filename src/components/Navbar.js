@@ -61,7 +61,7 @@ const Navbar = () => {
 				>
 					All Properties
 				</li>
-				<BsPersonSquare />
+				<BsPersonSquare onClick={() => navigate("/login")} />
 			</ul>
 		</div>
 	);
