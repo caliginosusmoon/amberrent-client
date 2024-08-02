@@ -19,9 +19,9 @@ function WhyChooseUs() {
 			</div>
 
 			<div className="bg-[#FFE5AD] flex flex-row items-center justify-center gap-2 w-full overflow-hidden">
-				<img src={rectangle32} width={480} height={480} />
-				<img src={rectangle33} width={480} height={480} />
-				<img src={rectangle34} width={480} height={480} />
+				<img src={rectangle32} width={480} height={480} className="mob:w-[200px] mob:h-[200px]"/>
+				<img src={rectangle33} width={480} height={480} className="mob:w-[200px] mob:h-[200px]"/>
+				<img src={rectangle34} width={480} height={480} className="mob:w-[200px] mob:h-[200px]"/>
 			</div>
 
 			<div className="bg-white shadow-2xl flex flex-row items-center justify-center gap-2 py-10">

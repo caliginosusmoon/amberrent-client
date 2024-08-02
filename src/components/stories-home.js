@@ -19,7 +19,7 @@ function StoriesHome() {
 				</span>
 				<hr className="w-full h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
 			</div>
-			<div className="grid grid-cols-3 gap-5 items-center overflow-hidden">
+			<div className="grid grid-cols-3 gap-5 items-center overflow-hidden mob:flex mob:flex-col">
 				<div className="bg-white hover:bg-[#F11A7B] hover:-translate-y-7 duration-300 border rounded-xl flex flex-col items-center shadow-xl w-[480px] h-[600px] py-8">
 					<img
 						src={storyprofile}

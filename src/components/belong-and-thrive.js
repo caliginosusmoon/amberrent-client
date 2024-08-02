@@ -25,9 +25,9 @@ const BelongAndThrive = () => {
 	}, []);
 	return (
 		<div>
-			<div className="w-full">
+			<div className="w-full mob:px-0">
 				<div className="bg-[#F11A7B] uppercase w-full flex items-center justify-center">
-					<p className="text-white text-6xl font-extrabold">
+					<p className="text-white text-6xl font-extrabold mob:text-center mob:items-center">
 						Belong And Thrive
 					</p>
 				</div>
@@ -39,7 +39,7 @@ const BelongAndThrive = () => {
 					<p className="text-base font-light pb-6">
 						Your place of pride with us
 					</p>
-					<div className="grid grid-cols-4 items-center gap-2">
+					<div className="grid grid-cols-4 items-center gap-5 mob:flex mob:flex-col mob:w-[300px]">
 						{products.length > 0 &&
 							products
 
@@ -63,11 +63,11 @@ const BelongAndThrive = () => {
 
 const ProductCard = ({ product, navigate }) => {
 	return (
-		<div>
+		<div className="w-[100%] h-[100%]">
 			<div
 				onClick={() => navigate(`/product/${product?._id}`)}
 				key={product.title}
-				className="bg-white shadow-2xl flex flex-col rounded-2xl"
+				className="bg-white shadow-2xl flex flex-col rounded-2xl mob:w-full mob:px-0"
 			>
 				<div>
 					<img src={product.image} width={400} height={500} />
@@ -81,8 +81,8 @@ const ProductCard = ({ product, navigate }) => {
 						<p className="text-gray-600">{product.description}</p>
 					</div>
 
-					<div className="grid grid-cols-5 gap-2 justify-center">
-						<div className="flex flex-col items-center justify-center">
+					<div className="grid grid-cols-5 gap-2 justify-center mob:flex mob:flex-col">
+						<div className="flex flex-col items-center justify-center mob:flex mob:flex-row">
 							<img src={cilcash} width={40} height={40} />
 							<h2 className="text-md font-bold whitespace-nowrap">
 								{product.price}
@@ -100,7 +100,7 @@ const ProductCard = ({ product, navigate }) => {
 							}}
 						></div>
 
-						<div className="flex flex-col items-center">
+						<div className="flex flex-col items-center mob:flex mob:flex-row">
 							<img
 								src={riluggagedepositfill}
 								width={40}
@@ -120,9 +120,10 @@ const ProductCard = ({ product, navigate }) => {
 								backgroundColor: "gray",
 								margin: "0 20px",
 							}}
+							
 						></div>
 
-						<div className="flex flex-col items-center">
+						<div className="flex flex-col items-center mob:flex mob:flex-row">
 							<img
 								src={carbon_floorplan}
 								width={40}

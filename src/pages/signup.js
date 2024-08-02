@@ -35,21 +35,23 @@ const SignUp = () => {
 	};
 
 	return (
-		<div className="flex w-full h-screen bg-[#EC7C64] p-8 lg:p-16">
-			<div className="flex w-full h-full bg-white p-2 lg:p-4 rounded-lg">
+		<div className="mx-8 h-full overflow-hidden">
+		<div className="flex w-full h-full bg-[#EC7C64] lg:p-16 rounded-bl-xl rounded-br-xl border ">
+			<div className="w-full h-[509px] bg-white p-2 lg:p-8 rounded-lg">
 				{/* Image section, hidden on small screens */}
-				<div className="hidden lg:flex h-full w-1/2 items-center justify-center bg-gray-200 rounded-lg overflow-hidden">
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-start justify-start">
+				<div className="hidden lg:flex w-3/8 h-1/2 items-start justify-start bg-gray-200 rounded-lg overflow-hidden">
 					<img
 						src={leftimage}
 						alt="Left Image"
-						className="w-full h-full object-cover"
+						className="w-full  object-cover"
 					/>
 				</div>
 				{/* Form section */}
 				<form onSubmit={handleSubmit}>
-					<div className="w-full flex items-center justify-center lg:w-1/2">
-						<div className="font-mono">
-							<h1 className="flex items-center text-5xl font-bold">
+					<div className="w-full flex items-center justify-center lg:w-3/4 lg:h-1/2">
+						<div className="font-mono mob:text-center">
+							<h1 className="flex items-center text-5xl font-bold mob:text-3xl mob:justify-center">
 								<span className="text-[#EC7C64] ml- 6">
 									New
 								</span>
@@ -117,7 +119,7 @@ const SignUp = () => {
 										placeholder="Confirm Password"
 									></input>
 								</div>
-								<div className="mt-6 flex justify-between items-center">
+								<div className="mt-3 flex justify-between items-center">
 									<div>
 										<input
 											type="checkbox"
@@ -134,12 +136,12 @@ const SignUp = () => {
 										Forgot password
 									</button>
 								</div>
-								<div className="mt-6 flex">
+								<div className="mt-3 flex">
 									<button className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out w-full py-3 bg-[#EC7C64] text-white text-lg font-bold rounded-xl">
 										Sign Up
 									</button>
 								</div>
-								<div className="mt-6 flex justify-between items-center">
+								<div className="mt-3 flex justify-between items-center">
 									<p className="font-medium text-base">
 										Already have an account?
 									</p>
@@ -157,7 +159,9 @@ const SignUp = () => {
 						</div>
 					</div>
 				</form>
+				</div>
 			</div>
+		</div>
 		</div>
 	);
 };

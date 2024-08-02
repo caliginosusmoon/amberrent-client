@@ -14,10 +14,11 @@ import Navbar from "./components/Navbar";
 import AddListing from "./pages/AddListing";
 import MyListing from "./pages/MyListing";
 import Stories from "./pages/stories";
+import AboutPage from "./pages/about";
 
 const App = () => {
 	return (
-		<div className="w-full max-width-[1300px]">
+		<div className="w-full max-width-[1300px] mob:px-0 mob:w-screen">
 			<BrowserRouter>
 				<Navbar />
 				<Routes>
@@ -30,6 +31,8 @@ const App = () => {
 					<Route path="/addproduct" element={<AddListing />} />
 					<Route path="/my-listings/:id" element={<MyListing />} />
 					<Route path="/stories" element={<Stories />} />
+					<Route path="/about" element={<AboutPage />} />
+
 				</Routes>
 			</BrowserRouter>
 		</div>
