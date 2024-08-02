@@ -35,7 +35,7 @@ const SignUp = () => {
 	};
 
 	return (
-		<div className="flex w-full h-screen bg-[#EC7C64] p-8 lg:p-16">
+		<div className="flex w-full h-screen bg-[#fec1e0] p-8 lg:p-16">
 			<div className="flex w-full h-full bg-white p-2 lg:p-4 rounded-lg">
 				{/* Image section, hidden on small screens */}
 				<div className="hidden lg:flex h-full w-1/2 items-center justify-center bg-gray-200 rounded-lg overflow-hidden">
@@ -50,7 +50,7 @@ const SignUp = () => {
 					<div className="w-full flex items-center justify-center lg:w-1/2">
 						<div className="font-mono">
 							<h1 className="flex items-center text-5xl font-bold">
-								<span className="text-[#EC7C64] ml- 6">
+								<span className="text-[#661c41] ml- 6">
 									New
 								</span>
 								<span className="text-black ml-6"> Here?</span>
@@ -135,7 +135,7 @@ const SignUp = () => {
 									</button>
 								</div>
 								<div className="mt-6 flex">
-									<button className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out w-full py-3 bg-[#EC7C64] text-white text-lg font-bold rounded-xl">
+									<button className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out w-full py-3 bg-[#3E001F] text-white text-lg font-bold rounded-xl">
 										Sign Up
 									</button>
 								</div>

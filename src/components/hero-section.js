@@ -29,7 +29,7 @@ function Hero_Section() {
 	useEffect(() => {
 		const fetchProducts = async () => {
 			try {
-				const allProducts = await axios.get(`${url}/product/products`);
+				const allProducts = await axios.get(`${url}product/products`);
 				setProducts(allProducts?.data);
 				setFilteredProducts(allProducts?.data);
 				console.log(allProducts?.data);
@@ -40,27 +40,27 @@ function Hero_Section() {
 		fetchProducts();
 	}, []);
 
-	useEffect(() => {
-		const filteredProducts = () => {
-			const filtered = products.filter((product) => {
-				return (
-					(selectedCategory
-						? product.category === selectedCategory
-						: true) &&
-					(selectedCity ? product.city === selectedCity : true)
-				);
-			});
-			setFilteredProducts(filtered);
-		};
-	}, [selectedCategory, selectedCity, products]);
-
 	const handleCategoryChange = (category) => {
 		setSelectedCategory(category);
 	};
 
 	const handleSearch = () => {
+		const filtered = products.filter((product) => {
+			return (
+				(selectedCategory
+					? product.category === selectedCategory
+					: true) &&
+				(selectedCity ? product?.location?.city === selectedCity : true)
+			);
+		});
+		// setFilteredProducts(filtered);
+		console.log(products);
+		console.log(selectedCategory, selectedCity);
+
+		console.log("filtered", filtered);
+
 		navigate("/filteredProducts", {
-			state: { products: filteredProducts },
+			state: { products: filtered },
 		});
 	};
 
@@ -102,7 +102,10 @@ function Hero_Section() {
 							Rental
 						</li>
 						<li
-							className="hover:text-[#F6FFCE] hover:bg-[#3E001F] hover:rounded-2xl duration-300 py-1 px-10 text-md font-extrabold"
+							className={`hover:text-[#F6FFCE] hover:bg-[#3E001F] hover:rounded-2xl duration-300 py-1 px-10 text-md font-extrabold ${
+								selectedCategory === "Flatmate" &&
+								"text-[#F6FFCE] bg-[#3E001F]"
+							}`}
 							onClick={() => handleCategoryChange("Flatmate")}
 						>
 							Flatmate
@@ -130,7 +133,7 @@ function Hero_Section() {
 							>
 								<option value="" disabled>
 									<LuLocate />
-									Bhubaneswar
+									See All Properties
 								</option>
 								{citiesOfIndia.map((state, index) => (
 									<option key={index} value={state}>

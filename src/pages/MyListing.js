@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { url } from "../config";
 import { useParams } from "react-router-dom";
-import { ProductCarddetail } from "./products";
+import ProductCarddetail from "../components/ProductCarddetail";
 
 const MyListing = () => {
 	const { id } = useParams();

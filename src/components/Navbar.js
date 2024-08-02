@@ -2,6 +2,7 @@
 import React from "react";
 import { BsPersonSquare } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/amberrent-logo.svg";
 
 const Navbar = () => {
 	const navigate = useNavigate();
@@ -20,9 +21,9 @@ const Navbar = () => {
 		const userData = JSON.parse(sessionStorage.getItem("userData"));
 		// const role = sessionStorage.getItem("role");
 		console.log("role", userData.role);
-		if (userData.userId && userData.role === "Provider") {
+		if (userData?.userId && userData?.role === "Provider") {
 			navigate(`/my-listings/${userData.userId}`);
-		} else if (userData.userId && userData.role === "Seeker") {
+		} else if (userData?.userId && userData?.role === "Seeker") {
 			alert("Register to list with us!");
 		} else {
 			alert("Register to list with us!");
@@ -30,14 +31,15 @@ const Navbar = () => {
 	};
 	return (
 		<div className="bg-[#3E001F] flex flex-row text-[#F6FFCE] items-center sticky top-0 justify-between p-4 mx-8">
-			<h2
-				className="text-2xl font-bold font-sans cursor-pointer"
+			<img
+				className="cursor-pointer"
+				src={logo}
 				onClick={() => {
 					navigate("/");
 				}}
-			>
-				LOGO
-			</h2>
+				alt="logo"
+			/>
+
 			<ul className="nav-items flex flex-row items-center right-0 justify-items-end justify-end gap-16">
 				<li className="cursor-pointer" onClick={handleChange}>
 					List with us
