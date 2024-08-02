@@ -32,7 +32,7 @@ const Navbar = () => {
 	return (
 		<div className="bg-[#3E001F] flex flex-row text-[#F6FFCE] items-center sticky top-0 justify-between p-4 mx-8 mob:text-center mob:items-center mob:mx-0">
 			
-			<img src={logo} alt="LOGO" width={100} height={100} className="text-2xl font-bold font-sans cursor-pointer"/>
+			<img src={logo} onClick={()=>{navigate("/")}} alt="LOGO" width={100} height={100} className="text-2xl font-bold font-sans cursor-pointer" />
 			<ul className="nav-items flex flex-row items-center right-0 justify-items-end justify-end gap-16 mob:gap-1">
 				<li className="cursor-pointer" onClick={handleChange}>
 					List with us
@@ -56,7 +56,7 @@ const Navbar = () => {
 				>
 					All Properties
 				</li>
-				<BsPersonSquare />
+				<BsPersonSquare onClick={() => navigate("/login")} />
 			</ul>
 		</div>
 	);

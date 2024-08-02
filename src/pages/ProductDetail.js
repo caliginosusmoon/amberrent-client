@@ -42,50 +42,50 @@ const ProductDetail = () => {
 			<div>
 				<div className="grid m-8">
 					<div>
-						<h1 className="text-[#F11A7B] font-bold text-lg">
+						<h1 className="text-[#F11A7B] font-bold text-4xl">
 							Rs.{productDetails.price}
 						</h1>
 					</div>
-					<div>{productDetails.title}</div>
+					<div className="text-lg">{productDetails.title}</div>
 				</div>
-				<div className="grid grid-cols-2">
-					<div className="rounded-lg m-8">
-						<img src={house} alt="house" />
+				<div className="grid grid-cols-2 mob:flex mob:flex-col">
+					<div className="rounded-lg m-8 items-center justify-center">
+						<img src={productDetails.image} alt="house" width={600} height={400}/>
 					</div>
 					<div>
-						<div className="grid grid-cols-3 border-0 bg-[#FFE5AD54] rounded-lg m-8 p-2">
-							<div className="flex flex-wrap">
+						<div className="grid grid-cols-3 border-0 bg-[#FFE5AD54] rounded-lg m-8 p-2 items-center justify-center">
+							<div className="flex flex-wrap items-center">
 								<div className="pt-1 pl-2 pr-2">
-									<IoBed />
+									<IoBed size={40} className="mob:hidden"/>
 								</div>
-								<div> {productDetails.beds} beds</div>
+								<div className="text-xl"> {productDetails.beds} Beds</div>
 							</div>
-							<div className="flex flex-wrap">
+							<div className="flex flex-wrap items-center">
 								<div className="pt-1 pl-2 pr-2">
-									<FaBath />
+									<FaBath size={40} className="mob:hidden"/>
 								</div>
-								<div>{productDetails.baths} baths</div>
+								<div className="text-xl">{productDetails.baths} Baths</div>
 							</div>
-							<div className="flex flex-wrap">
+							<div className="flex flex-wrap items-center">
 								<div className="pt-1 pl-2 pr-2">
-									<MdBalcony />
+									<MdBalcony size={40} className="mob:hidden"/>
 								</div>
-								<div>{productDetails.balcony} balcony</div>
+								<div className="text-xl">{productDetails.balcony} Balcony</div>
 							</div>
 						</div>
 						<div className="border-0 bg-[#FFE5AD54] rounded-lg m-8 p-2">
-							<div>
-								<h1 className="text-[#982176] font-semibold">
+							
+								<h1 className="text-[#982176] font-semibold text-xl">
 									Details
 								</h1>
-							</div>
-							<div className="grid grid-rows-3">
+						
+							<div className="flex flex-col gap-16">
 								<div className="grid grid-cols-2">
 									<div className="p-2">
-										<div className="font-thin">
+										<h2 className="font-light text-xl mob:text-lg">
 											Super Built Area
-										</div>
-										<div className="font-semibold">
+										</h2>
+										<div className="font-semibold text-gray-600">
 											{
 												productDetails?.details
 													?.superBuiltArea
@@ -94,7 +94,7 @@ const ProductDetail = () => {
 										</div>
 									</div>
 									<div className="p-2">
-										<div className="font-thin">Parking</div>
+										<h2 className="font-light text-xl mob:text-lg">Parking</h2>
 										<div className="font-semibold">
 											{productDetails?.details?.parking}
 										</div>
@@ -102,9 +102,9 @@ const ProductDetail = () => {
 								</div>
 								<div className="grid grid-cols-2">
 									<div className="p-2">
-										<div className="font-thin">
+										<h2 className="font-light text-xl mob:text-lg">
 											Additional Rooms
-										</div>
+										</h2>
 										<div className="font-semibold">
 											{
 												productDetails?.details
@@ -113,9 +113,9 @@ const ProductDetail = () => {
 										</div>
 									</div>
 									<div className="p-2">
-										<div className="font-thin">
+										<h2 className="font-light text-xl mob:text-lg">
 											Furnished
-										</div>
+										</h2>
 										<div className="font-semibold">
 											{productDetails?.details?.furnished}
 										</div>
@@ -123,36 +123,39 @@ const ProductDetail = () => {
 								</div>
 								<div className="grid grid-cols-2">
 									<div className="p-2">
-										<div className="font-thin">Floor </div>
+										<h2 className="font-light text-xl mob:text-lg">Floor </h2>
 										<div className="font-semibold">
 											{productDetails?.details?.floor}
 										</div>
 									</div>
-									<div className="p-2">
-										<div className="font-thin">
+									<div className="p-2 whitespace-nowrap mob:overflow-hidden">
+										<h2 className="font-light text-xl mob:text-lg">
 											Maintenance{" "}
-										</div>
-										<div className="font-semibold">
+										
+										<span className="font-semibold">
 											{
 												productDetails?.details
 													?.maintenance
 											}
 											/month
-										</div>
+										</span>
+										</h2>
+										
+										
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div className="grid grid-cols-3">
-					<div className="border-2 rounded-lg p-8 m-8 col-span-3">
+				<div className="grid grid-cols-3 ">
+					<div className="border-2 rounded-lg p-8 m-8 col-span-3 text-lg mob:p-0">
 						<div>
-							<h1 className="text-[#982176] font-semibold">
+							<h1 className="text-[#982176] font-semibold text-xl">
 								Features
 							</h1>
 						</div>
-						<div className="grid grid-cols-3">
+						<div className="grid grid-cols-3 mob:flex mob:flex-row">
 							<div>
 								<div className="pt-2 pr-6 pl-4 pb-2">
 									<div className="font-thin">
@@ -201,10 +204,10 @@ const ProductDetail = () => {
 							</div>
 						</div>
 						<div>
-							<div className="text-[#982176] font-semibold">
+							<div className="text-[#982176] font-semibold text-xl">
 								Description
 							</div>
-							<div className="p-2">
+							<div className="p-2 ">
 								{productDetails.description}
 							</div>
 						</div>
@@ -214,15 +217,15 @@ const ProductDetail = () => {
 					<div> map paste here!</div>
 				</div>*/}
 				</div>
-				<div className="grid grid-cols-2 place-content-center m-8">
-					<div className="flex justify-start">
+				<div className="flex flex-row items-center m-8 justify-between">
+					<div className="flex ">
 						<div className="pt-1 pl-2 pr-2">
-							<IoIosContact />{" "}
+							<IoIosContact size={40}/>{" "}
 						</div>
 						<div>{productDetails?.owner?.name}</div>
 					</div>
 					<div>
-						<button class="bg-[#982176] p-1 rounded-lg hover:bg-[#F11A7B] text-white ...">
+						<button class="bg-[#982176] px-10 py-2 text-xl rounded-2xl hover:bg-[#F11A7B] text-white ...">
 							Contact owner
 						</button>
 					</div>

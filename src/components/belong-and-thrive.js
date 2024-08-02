@@ -39,7 +39,7 @@ const BelongAndThrive = () => {
 					<p className="text-base font-light pb-6">
 						Your place of pride with us
 					</p>
-					<div className="grid grid-cols-4 items-center gap-5 mob:flex mob:flex-col mob:w-[300px]">
+					<div className="grid grid-cols-4 items-center gap-5 mob:flex mob:flex-col mob:w-[350px] mob:px-4">
 						{products.length > 0 &&
 							products
 
@@ -78,7 +78,7 @@ const ProductCard = ({ product, navigate }) => {
 						<h2 className="flex flex-row items-center justify-between text-lg font-semibold">
 							{product.title} <BiHeart />
 						</h2>
-						<p className="text-gray-600">{product.description}</p>
+						<p className="text-gray-600 overflow-hidden">{product.description}</p>
 					</div>
 
 					<div className="grid grid-cols-5 gap-2 justify-center mob:flex mob:flex-col">

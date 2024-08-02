@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { url } from "../config";
 import { useParams } from "react-router-dom";
-import { ProductCarddetail } from "./products";
+import ProductCarddetail from "../components/ProductCarddetail";
+
 
 const MyListing = () => {
 	const { id } = useParams();
@@ -24,14 +25,14 @@ const MyListing = () => {
 	}, []);
 
 	return (
-		<div>
-			<h2 className="text-[#982176] font-bold text-2xl text-center mb-5">
+		<div className="px-10 w-screen mob:px-0">
+			<h2 className="text-[#982176] font-bold text-5xl text-center py-10">
 				My Listings
 			</h2>
-			<div className="flex flex-col gap-12">
+			<div className="mob:flex mob:flex-col flex flex-col gap-10 mob:gap-0">
 				{products.length > 0 &&
 					products?.map((product) => (
-						<ProductCarddetail product={product} />
+						<ProductCarddetail product={product}/>
 					))}
 			</div>
 		</div>
