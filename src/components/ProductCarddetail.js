@@ -31,21 +31,24 @@ export const ProductCarddetail = ({ product }) => {
 	};
 
 	return (
-		<div className="bg-white border-gray-600 rounded-xl w-full shadow mob:flex mob:flex-row mob:h-screen">
+		<div
+			className="bg-white border-gray-600 rounded-xl shadow mob:flex mob:flex-row mob:h-screen"
+			// style={{ maxWidth: "90vw" }}
+		>
 			<div
-				className="grid grid-cols-3 gap-4 justify-between h-[250px] mob:flex mob:flex-col mob:gap-10"
-				style={{ gridTemplateColumns: "1fr 12fr 1fr" }}
+				className="flex justify-between gap-2 h-[250px] mob:flex mob:flex-col mob:gap-10"
+				// style={{ gridTemplateColumns: "1fr auto 1fr" }}
 			>
-				<div className="w-[400px]">
+				<div className="w-[350px]">
 					<img
 						src={product.image}
 						alt=""
 						className="rounded-tl-xl rounded-bl-xl w-full h-full"
 					/>
 				</div>
-				<div className="flex gap-4 mob:px-2 justify-between bg-black">
-					<div className="flex flex-col ">
-						<div className="flex flex-row items-center justify-between mob:flex mob:flex-row mob:justify-between">
+				<div className="flex w-full gap-4 mob:px-2 justify-between ">
+					<div className="flex flex-col w-full gap-2">
+						<div className="flex items-center justify-between mob:flex mob:flex-row mob:justify-between">
 							<h2 className="text-xl font-medium ">
 								{product.title}
 							</h2>
@@ -57,12 +60,12 @@ export const ProductCarddetail = ({ product }) => {
 								)}
 							</div>
 						</div>
-						<div className="grid grid-cols-3 items-center justify-between w-max bg-gray-100  border-gray-500 rounded-xl py-2 px-6 mr-1 mob:w-full">
+						<div className="grid grid-cols-3 items-center justify-between w-full bg-gray-100  border-gray-500 rounded-xl py-2 px-6 mr-1 mob:w-full">
 							<div className="flex flex-row items-center">
 								<IoBedOutline
 									size={40}
 									color="F11A7B"
-									className="mob:hidden"
+									className="mob:hidden px-2"
 								/>
 								<div className="">
 									<h2 className="text-gray-600 font-light">
@@ -78,7 +81,7 @@ export const ProductCarddetail = ({ product }) => {
 								<BiBath
 									size={40}
 									color="F11A7B"
-									className="mob:hidden"
+									className="mob:hidden px-2"
 								/>
 								<div className="">
 									<h2 className="text-gray-600 font-light">
@@ -94,7 +97,7 @@ export const ProductCarddetail = ({ product }) => {
 								<MdOutlineBalcony
 									size={40}
 									color="F11A7B"
-									className="mob:hidden"
+									className="mob:hidden px-2"
 								/>
 								<div className="">
 									<h2 className="text-gray-600 font-light">

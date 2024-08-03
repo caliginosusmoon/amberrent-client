@@ -8,7 +8,9 @@ const ProductsByFilter = () => {
 
 	return (
 		<div>
-			<h1>Results Page</h1>
+			<h1 className="text-[#982176] font-bold text-5xl text-center py-10">
+				Showing {products.length} results:{" "}
+			</h1>
 			<ul>
 				{products.length > 0 &&
 					products?.map((product) => (

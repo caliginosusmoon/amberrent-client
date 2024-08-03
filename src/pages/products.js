@@ -23,15 +23,17 @@ const ProductsPage = () => {
 	return (
 		<div>
 			<div className="w-full px-8 py-10">
-				<div className=" w-full">
+				<div className="">
 					<h2 className="text-[#982176] font-bold text-5xl text-center py-10">
 						Our List of Houses
 					</h2>
-					<div className="flex flex-col gap-12 mob:flex-col">
+					<div className="w-full flex flex-col gap-12 mob:flex-col">
 						{products.length > 0 &&
-							products?.map((product) => (
-								<ProductCarddetail product={product} />
-							))}
+							products
+								?.map((product) => (
+									<ProductCarddetail product={product} />
+								))
+								.reverse()}
 					</div>
 				</div>
 			</div>

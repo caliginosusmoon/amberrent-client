@@ -9,9 +9,9 @@ import leaf from "../assets/leaf.png";
 function WhyChooseUs() {
 	return (
 		<div className="flex flex-col w-full">
-			<div className="flex flex-row items-center gap-4 text-[#3E001F] py-10">
+			<div className="flex flex-row items-center gap-4 text-[#3E001F] pt-10">
 				<hr className="w-full h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-				<span className="font-extrabold text-2xl whitespace-nowrap">
+				<span className="font-bold text-2xl whitespace-nowrap">
 					{" "}
 					Why Choose Us
 				</span>
@@ -19,15 +19,30 @@ function WhyChooseUs() {
 			</div>
 
 			<div className="bg-[#FFE5AD] flex flex-row items-center justify-center gap-2 w-full overflow-hidden">
-				<img src={rectangle32} width={480} height={480} className="mob:w-[200px] mob:h-[200px]"/>
-				<img src={rectangle33} width={480} height={480} className="mob:w-[200px] mob:h-[200px]"/>
-				<img src={rectangle34} width={480} height={480} className="mob:w-[200px] mob:h-[200px]"/>
+				<img
+					src={rectangle32}
+					width={480}
+					height={480}
+					className="mob:w-[200px] mob:h-[200px]"
+				/>
+				<img
+					src={rectangle33}
+					width={480}
+					height={480}
+					className="mob:w-[200px] mob:h-[200px]"
+				/>
+				<img
+					src={rectangle34}
+					width={480}
+					height={480}
+					className="mob:w-[200px] mob:h-[200px]"
+				/>
 			</div>
 
-			<div className="bg-white shadow-2xl flex flex-row items-center justify-center gap-2 py-10">
+			<div className="bg-white shadow-2xl flex flex-row items-center justify-center gap-2 py-5 pb-10">
 				<div className="flex flex-col gap-4 items-center text-center bg-white shadow-2xl w-[480px]">
 					<img src={leaf} width={30} height={30} className="py-4" />
-					<p className="font-extrabold text-sm pb-4">
+					<p className="font-bold text-sm pb-4">
 						1000+
 						<br />
 						LGBTQ+ Friendly
@@ -43,7 +58,7 @@ function WhyChooseUs() {
 						height={30}
 						className="py-4"
 					/>
-					<p className="font-extrabold text-sm pb-4">
+					<p className="font-bold text-sm pb-4">
 						Inclusive Homes
 						<br />
 						for
@@ -59,7 +74,7 @@ function WhyChooseUs() {
 						height={0}
 						className="py-4"
 					/>
-					<p className="font-extrabold text-sm pb-4">
+					<p className="font-bold text-sm pb-4">
 						Building Trust
 						<br />
 						with Real Time

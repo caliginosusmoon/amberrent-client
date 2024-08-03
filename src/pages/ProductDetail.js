@@ -9,10 +9,12 @@ import { BsPersonSquare } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { url } from "../config";
+import ContactOwner from "../components/ContactOwner";
 
 const ProductDetail = () => {
 	const { id } = useParams();
 	const [productDetails, setProductDetails] = useState(null);
+	const [open, setOpen] = useState(false);
 
 	useEffect(() => {
 		const fetchProductDetails = async () => {
@@ -37,6 +39,14 @@ const ProductDetail = () => {
 		return <div>Loading...</div>;
 	}
 
+	const handleClose = () => {
+		setOpen(false);
+	};
+
+	const handleOpen = () => {
+		setOpen(true);
+	};
+
 	return (
 		<div>
 			<div>
@@ -50,35 +60,49 @@ const ProductDetail = () => {
 				</div>
 				<div className="grid grid-cols-2 mob:flex mob:flex-col">
 					<div className="rounded-lg m-8 items-center justify-center">
-						<img src={productDetails.image} alt="house" width={600} height={400}/>
+						<img
+							src={productDetails.image}
+							alt="house"
+							width={600}
+							height={400}
+						/>
 					</div>
 					<div>
 						<div className="grid grid-cols-3 border-0 bg-[#FFE5AD54] rounded-lg m-8 p-2 items-center justify-center">
 							<div className="flex flex-wrap items-center">
 								<div className="pt-1 pl-2 pr-2">
-									<IoBed size={40} className="mob:hidden"/>
+									<IoBed size={40} className="mob:hidden" />
 								</div>
-								<div className="text-xl"> {productDetails.beds} Beds</div>
+								<div className="text-xl">
+									{" "}
+									{productDetails.beds} Beds
+								</div>
 							</div>
 							<div className="flex flex-wrap items-center">
 								<div className="pt-1 pl-2 pr-2">
-									<FaBath size={40} className="mob:hidden"/>
+									<FaBath size={40} className="mob:hidden" />
 								</div>
-								<div className="text-xl">{productDetails.baths} Baths</div>
+								<div className="text-xl">
+									{productDetails.baths} Baths
+								</div>
 							</div>
 							<div className="flex flex-wrap items-center">
 								<div className="pt-1 pl-2 pr-2">
-									<MdBalcony size={40} className="mob:hidden"/>
+									<MdBalcony
+										size={40}
+										className="mob:hidden"
+									/>
 								</div>
-								<div className="text-xl">{productDetails.balcony} Balcony</div>
+								<div className="text-xl">
+									{productDetails.balcony} Balcony
+								</div>
 							</div>
 						</div>
 						<div className="border-0 bg-[#FFE5AD54] rounded-lg m-8 p-2">
-							
-								<h1 className="text-[#982176] font-semibold text-xl">
-									Details
-								</h1>
-						
+							<h1 className="text-[#982176] font-semibold text-xl">
+								Details
+							</h1>
+
 							<div className="flex flex-col gap-16">
 								<div className="grid grid-cols-2">
 									<div className="p-2">
@@ -94,7 +118,9 @@ const ProductDetail = () => {
 										</div>
 									</div>
 									<div className="p-2">
-										<h2 className="font-light text-xl mob:text-lg">Parking</h2>
+										<h2 className="font-light text-xl mob:text-lg">
+											Parking
+										</h2>
 										<div className="font-semibold">
 											{productDetails?.details?.parking}
 										</div>
@@ -123,7 +149,9 @@ const ProductDetail = () => {
 								</div>
 								<div className="grid grid-cols-2">
 									<div className="p-2">
-										<h2 className="font-light text-xl mob:text-lg">Floor </h2>
+										<h2 className="font-light text-xl mob:text-lg">
+											Floor{" "}
+										</h2>
 										<div className="font-semibold">
 											{productDetails?.details?.floor}
 										</div>
@@ -131,17 +159,14 @@ const ProductDetail = () => {
 									<div className="p-2 whitespace-nowrap mob:overflow-hidden">
 										<h2 className="font-light text-xl mob:text-lg">
 											Maintenance{" "}
-										
-										<span className="font-semibold">
-											{
-												productDetails?.details
-													?.maintenance
-											}
-											/month
-										</span>
+											<span className="font-semibold">
+												{
+													productDetails?.details
+														?.maintenance
+												}
+												/month
+											</span>
 										</h2>
-										
-										
 									</div>
 								</div>
 							</div>
@@ -220,14 +245,21 @@ const ProductDetail = () => {
 				<div className="flex flex-row items-center m-8 justify-between">
 					<div className="flex ">
 						<div className="pt-1 pl-2 pr-2">
-							<IoIosContact size={40}/>{" "}
+							<IoIosContact size={40} />{" "}
 						</div>
 						<div>{productDetails?.owner?.name}</div>
 					</div>
 					<div>
-						<button class="bg-[#982176] px-10 py-2 text-xl rounded-2xl hover:bg-[#F11A7B] text-white ...">
+						<button
+							class="bg-[#982176] px-10 py-2 text-xl rounded-2xl hover:bg-[#F11A7B] text-white ..."
+							onClick={handleOpen}
+						>
 							Contact owner
 						</button>
+						<ContactOwner
+							isOpen={open}
+							onClose={handleClose}
+						></ContactOwner>
 					</div>
 				</div>
 			</div>

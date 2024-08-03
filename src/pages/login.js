@@ -56,16 +56,17 @@ const LogIn = () => {
 	};
 
 	return (
-		<div className="mx-8 h-full overflow-hidden">
-			<div className="flex w-full h-full bg-[#EC7C64] lg:p-16 rounded-bl-xl rounded-br-xl border ">
-				<div className="w-full  h-[509px] bg-white p-2 lg:p-8 rounded-lg">
+		<div className="mx-8  overflow-hidden">
+			<div className="flex w-full  bg-[#EC7C64] lg:p-16 rounded-bl-xl rounded-br-xl border ">
+				<div className="w-full  bg-white p-2 lg:p-8 rounded-lg">
 					{/* Image section, hidden on small screens */}
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-start justify-start">
-						<div className="hidden lg:flex w-3/8 h-1/2 items-start justify-start bg-gray-200 rounded-lg overflow-hidden">
+					<div className="flex  gap-2 items-start justify-around ">
+						<div className="hidden h-[450px] w-[400px] lg:flex justify-center   bg-gray-200 rounded-lg overflow-hidden">
 							<img
 								src={leftimage}
-								alt="Left Image"
+								alt="Left Login"
 								className="w-full  object-cover"
+								S
 							/>
 						</div>
 						{/* Form section */}

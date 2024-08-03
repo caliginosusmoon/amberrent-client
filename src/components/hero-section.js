@@ -4,7 +4,7 @@ import { LuLocate } from "react-icons/lu";
 import group13 from "../assets/group13.png";
 import group15 from "../assets/group15.png";
 import group20 from "../assets/group20.png";
-import homebg from "../assets/homebg.png";
+import homebg from "../assets/homebg.svg";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { url } from "../config";
@@ -20,7 +20,7 @@ function Hero_Section() {
 		"Kolkata",
 	];
 	const [selectedCity, setSelectedCity] = useState("");
-	const [selectedCategory, setSelectedCategory] = useState("");
+	const [selectedCategory, setSelectedCategory] = useState("Rental");
 	const [products, setProducts] = useState([]);
 	const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -69,7 +69,7 @@ function Hero_Section() {
 	};
 
 	return (
-		<div className="w-full h-full flex flex-row px-8 mob:w-full mob:px-0 mob:h-full">
+		<div className="w-full h-full flex flex-row px-8 pb-8 mob:w-full mob:px-0 mob:h-full">
 			<div
 				style={{
 					backgroundImage: `url(${homebg})`,
@@ -96,13 +96,16 @@ function Hero_Section() {
 				>
 					<ul className="flex flex-row text-[#3E001F] items-center justify-around gap-20 text-md py-4 mob:gap-0 mob:justify-center ">
 						<li
-							className="hover:text-[#F6FFCE] hover:bg-[#3E001F] hover:rounded-2xl duration-300 py-1 px-10 text-md font-extrabold mob:px-2"
+							className={`hover:text-[#F6FFCE] hover:bg-[#3E001F] cursor-pointer rounded-2xl duration-300 py-1 px-10 text-md font-extrabold ${
+								selectedCategory === "Rental" &&
+								"text-[#F6FFCE] bg-[#3E001F]"
+							}`}
 							onClick={() => handleCategoryChange("Rental")}
 						>
 							Rental
 						</li>
 						<li
-							className={`hover:text-[#F6FFCE] hover:bg-[#3E001F] hover:rounded-2xl duration-300 py-1 px-10 text-md font-extrabold ${
+							className={`hover:text-[#F6FFCE] hover:bg-[#3E001F] cursor-pointer rounded-2xl duration-300 py-1 px-10 text-md font-extrabold ${
 								selectedCategory === "Flatmate" &&
 								"text-[#F6FFCE] bg-[#3E001F]"
 							}`}
@@ -111,7 +114,10 @@ function Hero_Section() {
 							Flatmate
 						</li>
 						<li
-							className="hover:text-[#F6FFCE] hover:bg-[#3E001F] hover:rounded-2xl duration-300 py-1 px-10 text-md font-extrabold mob:px-2 mob:text-center"
+							className={`hover:text-[#F6FFCE] hover:bg-[#3E001F] cursor-pointer rounded-2xl duration-300 py-1 px-10 text-md font-extrabold ${
+								selectedCategory === "PG" &&
+								"text-[#F6FFCE] bg-[#3E001F]"
+							}`}
 							onClick={() => handleCategoryChange("PG")}
 						>
 							Co-Living/PG
@@ -124,9 +130,10 @@ function Hero_Section() {
 							<p className="text-4xl font-medium text-gray-300 mob:hidden">
 								|
 							</p>
-							<div className="flex flex-col mob:flex mob:flex-row">
+							<div className="flex  mob:flex mob:flex-row ">
 								<CiLocationOn size={20} />
 								<select
+									className="cursor-pointer"
 									id="state-dropdown"
 									value={selectedCity}
 									onChange={handleChange}

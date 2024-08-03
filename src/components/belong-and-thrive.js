@@ -28,7 +28,7 @@ const BelongAndThrive = () => {
 		<div>
 			<div className="w-full mob:px-0">
 				<div className="bg-[#F11A7B] uppercase w-full flex items-center justify-center">
-					<p className="text-white text-6xl font-extrabold mob:text-center mob:items-center">
+					<p className="text-white text-5xl py-2 font-bold mob:text-center mob:items-center">
 						Belong And Thrive
 					</p>
 				</div>
@@ -89,14 +89,14 @@ const ProductCard = ({ product, navigate }) => {
 						<h2 className="flex flex-row items-center justify-between text-lg font-semibold">
 							{product.title} <BiHeart />
 						</h2>
-						<p className="text-gray-600 overflow-hidden py-4">
+						<p className="text-gray-600 overflow-hidden py-4 text-xs">
 							{shortdescription()}
 						</p>
 					</div>
 
 					<div className="grid grid-cols-5 gap-2 justify-center mob:flex mob:flex-col">
 						<div className="flex flex-col items-center mob:flex mob:flex-row">
-							<img src={cilcash} width={40} height={40} />
+							<img src={cilcash} width={20} height={20} />
 							<h2 className="text-md font-bold whitespace-nowrap">
 								{product.price}
 							</h2>
@@ -116,8 +116,8 @@ const ProductCard = ({ product, navigate }) => {
 						<div className="flex flex-col items-center mob:flex mob:flex-row">
 							<img
 								src={riluggagedepositfill}
-								width={40}
-								height={40}
+								width={20}
+								height={20}
 							/>
 							<h2 className="text-md font-bold whitespace-nowrap">
 								{product.price * 3}
@@ -138,8 +138,8 @@ const ProductCard = ({ product, navigate }) => {
 						<div className="flex flex-col items-center mob:flex mob:flex-row">
 							<img
 								src={carbon_floorplan}
-								width={40}
-								height={40}
+								width={20}
+								height={20}
 							/>
 							<h2 className="text-md font-bold whitespace-nowrap">
 								{product?.details?.superBuiltArea}
