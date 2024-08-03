@@ -24,10 +24,10 @@ const ProductsPage = () => {
 		<div>
 			<div className="w-full px-8 py-10">
 				<div className=" w-full">
-					<h2 className="text-[#F11A7B] text-3xl font-bold pb-10">
+					<h2 className="text-[#982176] font-bold text-5xl text-center py-10">
 						Our List of Houses
 					</h2>
-					<div className="flex flex-col gap-12">
+					<div className="flex flex-col gap-12 mob:flex-col">
 						{products.length > 0 &&
 							products?.map((product) => (
 								<ProductCarddetail product={product} />

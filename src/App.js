@@ -19,7 +19,7 @@ import ProductsByFilter from "./pages/ProductsByFilter";
 
 const App = () => {
 	return (
-		<div className="w-full max-width-[1300px]">
+		<div className="w-full max-width-[1300px] mob:px-0 mob:w-screen">
 			<BrowserRouter>
 				<Navbar />
 				<Routes>

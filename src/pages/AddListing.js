@@ -226,7 +226,7 @@ const AddListing = () => {
 
 					<label
 						htmlFor="property-category"
-						className="mb-1 font-bold"
+						className="mb-1 font-bold"	
 					>
 						Category
 					</label>

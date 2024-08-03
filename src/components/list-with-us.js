@@ -55,7 +55,7 @@ const ListWithUs = () => {
 	};
 
 	return (
-		<div className="bg-[#f2a592] flex justify-center items-center h-screen m-0">
+		<div className="bg-[#f2a592] flex justify-center items-center h-screen mx-8">
 			<div
 				className="bg-white p-8 rounded-2xl shadow-lg w-[900px] max-h-[90vh] overflow-y-auto"
 				id="form-container-list"

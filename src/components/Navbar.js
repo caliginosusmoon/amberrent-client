@@ -2,7 +2,7 @@
 import React from "react";
 import { BsPersonSquare } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/amberrent-logo.svg";
+import logo from "../assets/logo.svg";
 
 const Navbar = () => {
 	const navigate = useNavigate();
@@ -30,17 +30,18 @@ const Navbar = () => {
 		}
 	};
 	return (
-		<div className="bg-[#3E001F] flex flex-row text-[#F6FFCE] items-center sticky top-0 justify-between p-4 mx-8">
+		<div className="bg-[#3E001F] flex flex-row text-[#F6FFCE] items-center sticky top-0 justify-between p-4 mx-8 mob:text-center mob:items-center mob:mx-0">
 			<img
-				className="cursor-pointer"
 				src={logo}
 				onClick={() => {
 					navigate("/");
 				}}
-				alt="logo"
+				alt="LOGO"
+				width={100}
+				height={100}
+				className="text-2xl font-bold font-sans cursor-pointer"
 			/>
-
-			<ul className="nav-items flex flex-row items-center right-0 justify-items-end justify-end gap-16">
+			<ul className="nav-items flex flex-row items-center right-0 justify-items-end justify-end gap-16 mob:gap-1">
 				<li className="cursor-pointer" onClick={handleChange}>
 					List with us
 				</li>
